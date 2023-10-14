@@ -98,7 +98,7 @@
     },
     methods: {
       submitForm() {
-        console.log('Data Kendaraan:', this.vehicle);
+        this.$emit('vehicle-submitted', this.vehicle); // Mengirimkan data kendaraan
         this.emptyParkingSpaces -= 1;
       },
     },

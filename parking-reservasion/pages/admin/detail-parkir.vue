@@ -2,7 +2,7 @@
     <div class="bg-slate-50 min-h-screen">
         <div class="max-w-md w-3/4 mx-auto mt-16 p-2 bg-white rounded-lg shadow-lg shadow-black">
             <div class="flex">
-                <img src="../assets/img/Screenshot_2023-10-12_151514-removebg-preview.png" alt="" class="w-24 h-16 justify-center" />
+                <img src="../../assets/img/Screenshot_2023-10-12_151514-removebg-preview.png" alt="Logo" class="w-24 h-16 justify-center" />
             </div>
             <form>
                 <div class="mb-4">
@@ -32,6 +32,19 @@
           <label for="jenisKendaraan" class="text-gray-600">Jenis Kendaraan:</label>
           <input id="jenisKendaraan" class="border rounded-lg w-full p-2 block" v-model="jenisKendaraan" disabled/>
         </div>
+        <div class="mb-4">
+              <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
+              <select
+                v-model="status"
+                id="status"
+                name="status"
+                class="mt-1 p-2 w-full rounded-md border border-gray-300 focus:ring-indigo-600 focus:ring focus:ring-opacity-50"
+              >
+                <option value="approve">Approve</option>
+                <option value="not_approve">Not Approve</option>
+                <option value="pending">Pending</option>
+              </select>
+            </div>
         <button type="submit" class="bg-red-500 text-white justify-end flex rounded-lg py-2 px-4" v-if="showSubmitButton">Cancel</button>
       </form>
         </div>
@@ -49,7 +62,8 @@ import JsBarcode from "jsbarcode";
       merk: 'Honda',
       tanggal: '2023-12-12',
       waktu: '15:30',
-      jenisKendaraan: 'Mobil'
+      jenisKendaraan: 'Mobil',
+      status: 'pending'
     };
   },
   mounted() {
